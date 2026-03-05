@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cocoa Kraye — Data-as-a-Service</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <meta name="description" content="Cocoa Kraye aggregates and operationalizes foundational farm intelligence—soil quality, GPS mapping, and environmental monitoring—to power compliance and risk modeling." />
+    <meta name="theme-color" content="#3D2B1F" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="navbar navbar-expand-lg sticky-top cocoa-nav" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Cocoa Kraye</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#challenge">Challenge</a></li>
+            <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+            <li class="nav-item"><a class="nav-link" href="#value">Value</a></li>
+            <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+            <li class="nav-item"><a class="btn btn-sm btn-gold ms-lg-2" href="#partner">Partner for Impact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="top" class="hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-7">
+            <div class="glass p-4 p-md-5">
+              <p class="eyebrow">Data-as-a-Service for sustainable cocoa</p>
+              <h1 class="display-5 display-md-4 hero-title">The Digital Foundation for Sustainable Cocoa.</h1>
+              <p class="lead hero-lead">
+                We aggregate and operationalize foundational farm intelligence—soil quality, GPS mapping, and environmental monitoring—to power compliance and risk modeling.
+              </p>
+
+              <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+                <a class="btn btn-gold btn-lg" href="#partner">Partner for Impact</a>
+                <a class="btn btn-outline-cream btn-lg" href="#assets">Access Data Assets</a>
+              </div>
+
+              <div class="hero-metrics mt-4">
+                <div class="metric">
+                  <div class="metric-label">Outputs</div>
+                  <div class="metric-value">GPS • Soil • Monitoring</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Designed for</div>
+                  <div class="metric-value">Compliance & Risk</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Delivery</div>
+                  <div class="metric-value">Licenses • APIs • Reports</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <div class="glass p-4">
+              <div class="data-panel">
+                <div class="data-panel__header">
+                  <div>
+                    <div class="data-panel__title">Foundational Intelligence</div>
+                    <div class="data-panel__subtitle">A normalized dataset you can trust</div>
+                  </div>
+                  <span class="pill">EUDR-ready</span>
+                </div>
+
+                <div class="data-panel__grid">
+                  <div class="data-card">
+                    <div class="data-card__k">Farm GPS</div>
+                    <div class="data-card__v">Mapped boundaries</div>
+                  </div>
+                  <div class="data-card">
+                    <div class="data-card__k">Soil Health</div>
+                    <div class="data-card__v">Lab-grade profiles</div>
+                  </div>
+                  <div class="data-card">
+                    <div class="data-card__k">Environmental</div>
+                    <div class="data-card__v">Monitoring signals</div>
+                  </div>
+                  <div class="data-card">
+                    <div class="data-card__k">Risk Model</div>
+                    <div class="data-card__v">Derived indicators</div>
+                  </div>
+                </div>
+
+                <div class="mt-3 small text-cream-80">
+                  Structured assets for compliance, sustainability reporting, and sophisticated risk modeling.
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 photo-strip" aria-label="Field photography from Ghana">
+              <div class="photo-strip__item">
+                <img src="./assets/images/Woman-cocoa-farmer-cleaning-cocoa-scaled.webp" class="photo-strip__img" alt="Ghana cocoa farmer cleaning cocoa" loading="lazy" />
+              </div>
+              <div class="photo-strip__item">
+                <img src="./assets/images/67808366.jpg" class="photo-strip__img" alt="Cocoa farming in Ghana" loading="lazy" />
+              </div>
+              <div class="photo-strip__item">
+                <img src="./assets/images/digital%20payments%20-%20sustainable%20cocoa%20farming.jpg.webp" class="photo-strip__img" alt="Digital tools supporting sustainable cocoa farming" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="mt-3 text-center text-lg-start small text-cream-70">
+              Photography: real cocoa communities in Ghana.
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="challenge" class="section section-cream">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-5">
+              <h2 class="section-title">The Foundational Challenge</h2>
+              <p class="section-lead">
+                Prohibitive cost and technical complexity keep smallholders and cooperatives from accessing the digital intelligence required for modern compliance—especially EUDR—and precision agriculture.
+              </p>
+              <div class="thin-rule"></div>
+              <div class="key-points">
+                <div class="key-point">
+                  <div class="key-point__title">High cost to digitize</div>
+                  <div class="key-point__body">Soil testing, GPS mapping, and monitoring are fragmented and expensive at scale.</div>
+                </div>
+                <div class="key-point">
+                  <div class="key-point__title">Hard to operationalize</div>
+                  <div class="key-point__body">Raw field data rarely becomes standardized, validated, and decision-ready.</div>
+                </div>
+                <div class="key-point">
+                  <div class="key-point__title">Regulatory pressure</div>
+                  <div class="key-point__body">Due diligence, traceability, and sustainability proof are now table stakes.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <div class="problem-visual glass p-4 p-md-5">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <p class="eyebrow-dark">Why it matters</p>
+                    <h3 class="h4 mb-2">Without foundational intelligence, systems fail upstream.</h3>
+                    <p class="mb-0 text-slate-80">
+                      Traceability platforms and compliance tools are only as good as the farm data beneath them. Cocoa Kraye focuses first on acquiring validated foundational datasets.
+                    </p>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="node-diagram" role="img" aria-label="Diagram showing fragmented inputs flowing into a standardized intelligence layer">
+                      <div class="node-diagram__col">
+                        <div class="node">Field notes</div>
+                        <div class="node">GPS points</div>
+                        <div class="node">Soil samples</div>
+                        <div class="node">Satellite cues</div>
+                      </div>
+                      <div class="node-diagram__mid">
+                        <div class="pipe"></div>
+                        <div class="pipe"></div>
+                        <div class="pipe"></div>
+                      </div>
+                      <div class="node-diagram__col">
+                        <div class="node node--gold">Validated dataset</div>
+                        <div class="node">Compliance inputs</div>
+                        <div class="node">Risk indicators</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="callout">
+                      <div class="callout__badge">Urgent project need</div>
+                      <div class="callout__text">
+                        A research project is required to develop a scalable, low-cost model for aggregating and operationalizing essential digital data assets.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="solution" class="section section-slate">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6">
+              <h2 class="section-title text-cream">The Solution (Research & Data)</h2>
+              <p class="section-lead text-cream-80">
+                Cocoa Kraye delivers a scalable, low-cost model to generate foundational intelligence that smallholders can actually access—and that buyers, funders, and financial actors can trust.
+              </p>
+
+              <div class="mt-4">
+                <div class="step">
+                  <div class="step__num">1</div>
+                  <div class="step__body">
+                    <div class="step__title">Acquire & validate</div>
+                    <div class="step__text">Farmer engagement, GPS boundary mapping, soil profiling, and environmental monitoring.</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step__num">2</div>
+                  <div class="step__body">
+                    <div class="step__title">Normalize & operationalize</div>
+                    <div class="step__text">Standard schemas, QA workflows, and evidence trails for compliance-grade use.</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step__num">3</div>
+                  <div class="step__body">
+                    <div class="step__title">License & deliver</div>
+                    <div class="step__text">Data licenses, subscriptions, and API-ready intelligence for downstream modeling.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="glass p-4 p-md-5">
+                <p class="eyebrow">Scalable, low-cost model</p>
+                <h3 class="h4">Raw farm signals → Foundational intelligence</h3>
+
+                <div class="mt-3 solution-photo" aria-label="Field work and data acquisition in Ghana">
+                  <img src="./assets/images/FMYNDGUDNRIRZI4NSJ4LBOOUVM.avif" class="solution-photo__img" alt="Field work supporting cocoa data acquisition" loading="lazy" />
+                </div>
+
+                <div class="transform mt-4" role="img" aria-label="Transformation diagram from raw signals to intelligence">
+                  <div class="transform__col">
+                    <div class="transform__item">GPS boundaries</div>
+                    <div class="transform__item">Soil chemistry</div>
+                    <div class="transform__item">Canopy / land-use</div>
+                    <div class="transform__item">Climate signals</div>
+                  </div>
+
+                  <div class="transform__arrow" aria-hidden="true">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-head"></div>
+                  </div>
+
+                  <div class="transform__col">
+                    <div class="transform__item transform__item--gold">Validated assets</div>
+                    <div class="transform__item">EUDR evidence pack</div>
+                    <div class="transform__item">Sustainability KPIs</div>
+                    <div class="transform__item">Risk indicators</div>
+                  </div>
+                </div>
+
+                <div class="thin-rule thin-rule--cream mt-4"></div>
+                <p class="mb-0 text-cream-80" id="assets">
+                  Access data as: premium licenses, annual subscriptions, API endpoints, or quarterly risk reports.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="value" class="section section-cream">
+        <div class="container">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-lg-7">
+              <h2 class="section-title">Customer Value Matrix</h2>
+              <p class="section-lead">
+                Our strategy now prioritizes acquiring foundational data assets and environmental monitoring—serving the entities that value, fund, and utilize this intelligence for compliance, sustainability reporting, and risk modeling.
+              </p>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="note">
+                <div class="note__title">Business rationale</div>
+                <div class="note__body">Solve the access problem once—then deliver validated datasets to many stakeholders.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-2">
+            <div class="col-12 col-md-6">
+              <div class="value-card glass glass--light p-4 h-100">
+                <div class="value-card__top">
+                  <div class="value-card__title">Mid-to-Large Cocoa Exporters</div>
+                  <span class="pill pill--dark">Annual subscription</span>
+                </div>
+                <div class="value-card__body">
+                  Standardized, validated farm-level data (GPS, soil health) to comply with mandates like the EUDR—foundation for in-house traceability.
+                </div>
+                <div class="thin-rule thin-rule--dark"></div>
+                <div class="value-card__meta">Pricing model: per mapped farm or volume</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="value-card glass glass--light p-4 h-100">
+                <div class="value-card__top">
+                  <div class="value-card__title">International Buyers (EU)</div>
+                  <span class="pill pill--dark">Premium license</span>
+                </div>
+                <div class="value-card__body">
+                  Due diligence and risk monitoring for global supply chains—core environmental/mapping data to validate claims and inform sourcing.
+                </div>
+                <div class="thin-rule thin-rule--dark"></div>
+                <div class="value-card__meta">Pricing model: premium license or annual subscription</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="value-card glass glass--light p-4 h-100">
+                <div class="value-card__top">
+                  <div class="value-card__title">Development NGOs / Sustainability Funds</div>
+                  <span class="pill pill--dark">Grants & contracts</span>
+                </div>
+                <div class="value-card__body">
+                  Quantifiable research data for climate resilience and yield improvement—funding initial collection as an impact monitoring service.
+                </div>
+                <div class="thin-rule thin-rule--dark"></div>
+                <div class="value-card__meta">Pricing model: project-based contracts or grants</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="value-card glass glass--light p-4 h-100">
+                <div class="value-card__top">
+                  <div class="value-card__title">Finance / Insurance</div>
+                  <span class="pill pill--dark">API / reports</span>
+                </div>
+                <div class="value-card__body">
+                  Reliable environmental and health data to assess lending risk, premiums, and volatility—macro risk intelligence derived from aggregated data.
+                </div>
+                <div class="thin-rule thin-rule--dark"></div>
+                <div class="value-card__meta">Pricing model: API access or quarterly risk report subscription</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section section-slate">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-6">
+              <h2 class="section-title text-cream">Go-To-Market Roadmap</h2>
+              <p class="section-lead text-cream-80">
+                Start with non-dilutive capital to build the dataset. Then scale distribution through exporters and international buyers.
+              </p>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="glass p-4 p-md-5">
+                <div class="roadmap">
+                  <div class="roadmap-item">
+                    <div class="roadmap-item__head">
+                      <div class="roadmap-item__step">Step 1</div>
+                      <div class="roadmap-item__title">Data Acquisition & Grant Funding</div>
+                    </div>
+                    <div class="roadmap-item__body">
+                      Focus on NGOs and Sustainability Funds to execute farmer engagement, mapping, and monitoring—building the core digital data assets.
+                    </div>
+                  </div>
+
+                  <div class="roadmap-divider" aria-hidden="true"></div>
+
+                  <div class="roadmap-item">
+                    <div class="roadmap-item__head">
+                      <div class="roadmap-item__step">Step 2</div>
+                      <div class="roadmap-item__title">Data Monetization & Scale</div>
+                    </div>
+                    <div class="roadmap-item__body">
+                      Provide exporters and international buyers the validated compliance and risk foundation traditional methods fail to deliver.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="thin-rule thin-rule--cream mt-4"></div>
+                <div class="small text-cream-80">
+                  Outcome: repeatable, standardized intelligence across regions—ready for licensing, compliance, and modeling.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="partner" class="section section-cream">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6">
+              <h2 class="section-title">Partner with Cocoa Kraye</h2>
+              <p class="section-lead">
+                If you fund, use, or require validated farm intelligence, we can align on a research-backed data program tailored to compliance, sustainability reporting, and risk modeling.
+              </p>
+              <div class="thin-rule"></div>
+              <div class="small text-slate-80">
+                No spam. We only use your details to respond about partnerships and data assets.
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="glass glass--light p-4 p-md-5">
+                <form id="leadForm" class="lead-form" novalidate>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label" for="name">Name</label>
+                      <input class="form-control" id="name" name="name" type="text" autocomplete="name" required />
+                      <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="email">Email</label>
+                      <input class="form-control" id="email" name="email" type="email" autocomplete="email" required />
+                      <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="org">Organization</label>
+                      <input class="form-control" id="org" name="org" type="text" autocomplete="organization" />
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="interest">Primary interest</label>
+                      <select class="form-select" id="interest" name="interest" required>
+                        <option value="" selected disabled>Select one…</option>
+                        <option>Research partnership / grant</option>
+                        <option>Compliance datasets (EUDR)</option>
+                        <option>Sustainability reporting</option>
+                        <option>Risk modeling / finance</option>
+                        <option>API / data licensing</option>
+                      </select>
+                      <div class="invalid-feedback">Please select an option.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label" for="message">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us what you’re trying to enable…"></textarea>
+                    </div>
+
+                    <div class="col-12 d-grid">
+                      <button class="btn btn-gold btn-lg" type="submit">Request a partnership call</button>
+                    </div>
+
+                    <div class="col-12">
+                      <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-7">
+            <div class="footer-brand d-flex align-items-center gap-2">
+              <span class="brand-mark brand-mark--sm" aria-hidden="true"></span>
+              <div>
+                <div class="footer-title">Cocoa Kraye</div>
+                <div class="footer-subtitle">Foundational farm intelligence for compliance and risk</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="footer-links">
+              <a href="#challenge">Challenge</a>
+              <a href="#solution">Solution</a>
+              <a href="#value">Value</a>
+              <a href="#partner">Partner</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-rule"></div>
+        <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-cream-70">
+          <div>© <span id="year"></span> Cocoa Kraye. All rights reserved.</div>
+          <div>Built as a visual extension of the pitch-deck narrative.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
