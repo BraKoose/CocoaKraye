@@ -70,11 +70,32 @@ h1,h2,h3,.brand-name{
   border-color: var(--gold);
   color: #1a140a;
   font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+  transition: left 0.5s;
 }
 .btn-gold:hover{
-  background: #caa631;
-  border-color: #caa631;
+  background: #e4c04a;
+  border-color: #e4c04a;
   color:#1a140a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,175,55,.35);
+}
+.btn-gold:hover::before{
+  left: 100%;
+}
+.btn-gold:active{
+  transform: translateY(0);
 }
 
 .btn-outline-cream{
@@ -103,11 +124,11 @@ h1,h2,h3,.brand-name{
   position:absolute;
   inset:0;
   background-image:
-    linear-gradient(90deg, rgba(11,18,20,.78), rgba(11,18,20,.40) 45%, rgba(11,18,20,.78)),
-    url("./assets/images/7BGVN6XR6VIDTDBF6ZHZ265UQ4.jpg");
+    linear-gradient(90deg, rgba(11,18,20,.85), rgba(11,18,20,.50) 45%, rgba(11,18,20,.70)),
+    url("./assets/images/hero-ghanaian-farmer.jpg");
   background-size: cover;
-  background-position: center 30%;
-  filter: saturate(1.04) contrast(1.05);
+  background-position: center 25%;
+  filter: saturate(1.1) contrast(1.05);
   transform: scale(1.02);
 }
 
@@ -488,9 +509,243 @@ h1,h2,h3,.brand-name{
 .footer-links a:hover{ color: rgba(212,175,55,.92); }
 .footer-rule{ height: 1px; background: rgba(249,247,242,.12); margin: 18px 0; }
 
-/* Bootstrap overrides */
-.navbar-toggler{ border-color: rgba(249,247,242,.20); }
-.navbar-toggler:focus{ box-shadow: 0 0 0 .2rem rgba(212,175,55,.16); }
-.navbar-toggler-icon{
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28249,247,242,.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+/* ===== PREMIUM MAGAZINE / FINANCIAL TERMINAL ENHANCEMENTS ===== */
+
+/* Ticker/Market Snapshot - Financial Terminal Style */
+.ticker-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.ticker-card{
+  border-radius: 12px;
+  padding: 16px 14px;
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(212,175,55,.2);
+  font-family: 'Inter', monospace;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.ticker-card::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ticker-card:hover{
+  border-color: rgba(212,175,55,.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+.ticker-card:hover::before{
+  opacity: 1;
+}
+.ticker-label{ 
+  font-size:.7rem; 
+  color: rgba(249,247,242,.55); 
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.ticker-value{ 
+  font-weight: 700; 
+  font-size: 1.35rem; 
+  color: rgba(249,247,242,.98); 
+  margin-top: 6px;
+  font-family: 'Inter', sans-serif;
+}
+.ticker-delta{ 
+  font-size:.78rem; 
+  margin-top: 6px; 
+  font-weight: 600;
+}
+.ticker-up{ color: #4ade80; }
+.ticker-elevated{ color: #fbbf24; }
+.ticker-down{ color: #f87171; }
+
+/* Live indicator pulse */
+.live-indicator{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .7rem;
+  color: rgba(249,247,242,.6);
+  margin-bottom: 12px;
+}
+.live-indicator::before{
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse{
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+/* Intelligence cards - Premium Magazine Style */
+.intelligence-card{
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(249, 247, 242, .95);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+.intelligence-card::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(180deg, transparent, rgba(61,43,31,.08));
+  transition: height 0.3s;
+}
+.intelligence-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(0,0,0,.18);
+}
+.intelligence-card:hover::after{
+  height: 60px;
+}
+.intelligence-card__img{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--cocoa);
+  position: relative;
+  transition: transform 0.5s ease;
+}
+.intelligence-card:hover .intelligence-card__img{
+  transform: scale(1.05);
+}
+.intelligence-card__img::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, rgba(249,247,242,1));
+}
+.intelligence-card__body{
+  position: relative;
+  z-index: 1;
+}
+.intelligence-card__title{
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--cocoa);
+  transition: color 0.3s;
+}
+.intelligence-card:hover .intelligence-card__title{
+  color: var(--forest);
+}
+.intelligence-card__meta{
+  font-size: .8rem;
+  color: rgba(31,42,46,.55);
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.intelligence-card__meta::before{
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(31,42,46,.15);
+}
+
+/* Value points - Enhanced */
+.value-point{ 
+  display:flex; 
+  gap: 14px; 
+  align-items:flex-start; 
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(249,247,242,.05);
+  border: 1px solid rgba(249,247,242,.08);
+  transition: all 0.3s ease;
+}
+.value-point:hover{
+  background: rgba(249,247,242,.08);
+  border-color: rgba(212,175,55,.2);
+  transform: translateX(4px);
+}
+.value-point__icon{
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(212,175,55,.2), rgba(212,175,55,.1));
+  border: 1px solid rgba(212,175,55,.3);
+  color: var(--gold);
+  font-weight: 900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 1.2rem;
+}
+.value-point__title{ 
+  font-weight: 700; 
+  color: rgba(249,247,242,.96); 
+  font-size: 1.05rem;
+}
+.value-point__text{ 
+  color: rgba(249,247,242,.65); 
+  font-size: .95rem;
+  margin-top: 4px;
+}
+
+/* Section titles - Premium typography */
+.section-title{
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+.section-title::after{
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-top: 12px;
+}
+
+/* Waitlist forms - Enhanced */
+.waitlist-form input,
+.waitlist-form select{
+  border-radius: 12px;
+  border: 1px solid rgba(31,42,46,.15);
+  padding: 14px 16px;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,.9);
+}
+.waitlist-form input:focus,
+.waitlist-form select:focus{
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212,175,55,.15);
+  background: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px){
+  .hero{ min-height: auto; padding: 40px 0; }
+  .ticker-grid{ grid-template-columns: 1fr; }
+  .intelligence-card__img{ height: 160px; }
+  .section-title{ font-size: 1.6rem; }
 }
