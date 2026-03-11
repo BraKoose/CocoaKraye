@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedback — Cocoa Market Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <meta name="description" content="Share your feedback on the Cocoa Market Intelligence platform. Help us improve our AI-powered market insights." />
+    <meta name="theme-color" content="#3D2B1F" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top cocoa-nav" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Cocoa Market Intelligence</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="./index.html#intelligence">Intelligence</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#heritage">Heritage</a></li>
+            <li class="nav-item"><a class="nav-link" href="./data.html">Market Data</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./feedback.html">Feedback</a></li>
+            <li class="nav-item"><a class="nav-link" href="./dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a class="btn btn-sm btn-gold ms-lg-2" href="./index.html#waitlist">Join Waitlist</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="section section-slate py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center">
+              <p class="eyebrow">Your Voice Matters</p>
+              <h1 class="display-5 hero-title mb-3">Help Us Improve</h1>
+              <p class="lead hero-lead">
+                Share your feedback on the Cocoa Market Intelligence platform. Your insights help us build better tools for cocoa investors and exporters across Ghana and Côte d'Ivoire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Form Section -->
+      <section class="section section-cream">
+        <div class="container">
+          <div class="row g-4">
+            <!-- Feedback Form -->
+            <div class="col-12 col-lg-8">
+              <div class="glass glass--light p-4 p-md-5">
+                <h2 class="h3 mb-4" style="font-family: 'Playfair Display', serif;">Share Your Feedback</h2>
+                
+                <form id="feedbackForm" class="feedback-form" novalidate>
+                  <!-- User Info -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6">
+                      <label class="form-label" for="feedbackName">Name</label>
+                      <input class="form-control" id="feedbackName" name="name" type="text" placeholder="Your name" required />
+                      <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="form-label" for="feedbackEmail">Email</label>
+                      <input class="form-control" id="feedbackEmail" name="email" type="email" placeholder="your@email.com" required />
+                      <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                  </div>
+
+                  <!-- Role -->
+                  <div class="mb-4">
+                    <label class="form-label" for="feedbackRole">Your Role</label>
+                    <select class="form-select" id="feedbackRole" name="role" required>
+                      <option value="" disabled selected>Select your role...</option>
+                      <option value="Remote Farm Owner">Remote Farm Owner</option>
+                      <option value="Investor">Investor</option>
+                      <option value="Exporter">Exporter</option>
+                      <option value="Analyst">Analyst</option>
+                      <option value="LBC Representative">LBC Representative</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your role.</div>
+                  </div>
+
+                  <!-- Platform Rating -->
+                  <div class="mb-4">
+                    <label class="form-label d-block">How would you rate the platform?</label>
+                    <div class="rating-stars" id="platformRating">
+                      <button type="button" class="star-btn" data-rating="1" aria-label="1 star">★</button>
+                      <button type="button" class="star-btn" data-rating="2" aria-label="2 stars">★</button>
+                      <button type="button" class="star-btn" data-rating="3" aria-label="3 stars">★</button>
+                      <button type="button" class="star-btn" data-rating="4" aria-label="4 stars">★</button>
+                      <button type="button" class="star-btn" data-rating="5" aria-label="5 stars">★</button>
+                    </div>
+                    <input type="hidden" id="ratingValue" name="rating" value="0" required />
+                    <div class="invalid-feedback">Please provide a rating.</div>
+                    <small class="text-muted mt-1 d-block">Click to rate from 1-5 stars</small>
+                  </div>
+
+                  <!-- Feedback Categories -->
+                  <div class="mb-4">
+                    <label class="form-label">What areas would you like to give feedback on? <span class="text-muted">(Select all that apply)</span></label>
+                    <div class="feedback-categories">
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="Market Data" />
+                        <span>Market Data & Pricing</span>
+                      </label>
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="EUDR Compliance" />
+                        <span>EUDR Compliance</span>
+                      </label>
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="CSSV Alerts" />
+                        <span>CSSV/Disease Alerts</span>
+                      </label>
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="User Experience" />
+                        <span>User Experience</span>
+                      </label>
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="Mobile App" />
+                        <span>Mobile Experience</span>
+                      </label>
+                      <label class="category-checkbox">
+                        <input type="checkbox" name="categories" value="Newsletter" />
+                        <span>Newsletter/Briefs</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Detailed Feedback -->
+                  <div class="mb-4">
+                    <label class="form-label" for="feedbackText">Your Feedback</label>
+                    <textarea class="form-control" id="feedbackText" name="feedback" rows="5" placeholder="Tell us what you like, what could be improved, or any issues you've encountered..." required></textarea>
+                    <div class="invalid-feedback">Please share your feedback.</div>
+                  </div>
+
+                  <!-- Feature Suggestions -->
+                  <div class="mb-4">
+                    <label class="form-label" for="featureSuggestions">Feature Suggestions <span class="text-muted">(Optional)</span></label>
+                    <textarea class="form-control" id="featureSuggestions" name="features" rows="3" placeholder="What features would you like to see added to the platform?"></textarea>
+                  </div>
+
+                  <!-- Priority Level -->
+                  <div class="mb-4">
+                    <label class="form-label" for="priorityLevel">How urgent is your feedback?</label>
+                    <select class="form-select" id="priorityLevel" name="priority">
+                      <option value="Low">Low — General suggestion</option>
+                      <option value="Medium" selected>Medium — Nice to have improvement</option>
+                      <option value="High">High — Significant issue</option>
+                      <option value="Critical">Critical — Blocking my usage</option>
+                    </select>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="reset" class="btn btn-outline-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-gold btn-lg">
+                      <span class="submit-text">Submit Feedback</span>
+                      <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- Status Message -->
+                  <div id="feedbackStatus" class="form-status mt-3" role="status" aria-live="polite"></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Sidebar Info -->
+            <div class="col-12 col-lg-4">
+              <div class="glass p-4 mb-4">
+                <h3 class="h5 mb-3" style="font-family: 'Playfair Display', serif;">Why Your Feedback Matters</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-3 d-flex gap-2">
+                    <span style="color: var(--gold);">✓</span>
+                    <span>Shape the future of cocoa market intelligence</span>
+                  </li>
+                  <li class="mb-3 d-flex gap-2">
+                    <span style="color: var(--gold);">✓</span>
+                    <span>Help us prioritize features that matter to you</span>
+                  </li>
+                  <li class="mb-3 d-flex gap-2">
+                    <span style="color: var(--gold);">✓</span>
+                    <span>Report issues and get them resolved quickly</span>
+                  </li>
+                  <li class="d-flex gap-2">
+                    <span style="color: var(--gold);">✓</span>
+                    <span>Be the first to know about new features</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass p-4 mb-4">
+                <h3 class="h5 mb-3" style="font-family: 'Playfair Display', serif;">Response Time</h3>
+                <p class="mb-0 text-muted">
+                  We typically respond to feedback within 24-48 hours. Critical issues are addressed immediately.
+                </p>
+              </div>
+
+              <div class="glass p-4">
+                <h3 class="h5 mb-3" style="font-family: 'Playfair Display', serif;">Other Ways to Connect</h3>
+                <p class="mb-2 text-muted">Need immediate assistance?</p>
+                <a href="mailto:team@cocoamarketintel.com" class="btn btn-outline-secondary w-100">
+                  Email Our Team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-7">
+            <div class="footer-brand d-flex align-items-center gap-2">
+              <span class="brand-mark brand-mark--sm" aria-hidden="true"></span>
+              <div>
+                <div class="footer-title">Cocoa Market Intelligence</div>
+                <div class="footer-subtitle">AI-powered magazine for investors & exporters</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="footer-links">
+              <a href="./index.html#intelligence">Intelligence</a>
+              <a href="./index.html#heritage">Heritage</a>
+              <a href="./data.html">Data</a>
+              <a href="./feedback.html">Feedback</a>
+              <a href="./dashboard.html">Dashboard</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-rule"></div>
+        <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-cream-70">
+          <div>© <span id="year"></span> Cocoa Market Intelligence. All rights reserved.</div>
+          <div>Built for Ghana, Côte d'Ivoire, and global cocoa leaders.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

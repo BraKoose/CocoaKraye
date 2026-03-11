@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard — Cocoa Market Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <meta name="description" content="Platform analytics dashboard - track waitlist signups, feedback ratings, and user engagement metrics." />
+    <meta name="theme-color" content="#3D2B1F" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top cocoa-nav" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Cocoa Market Intelligence</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="./index.html#intelligence">Intelligence</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html#heritage">Heritage</a></li>
+            <li class="nav-item"><a class="nav-link" href="./data.html">Market Data</a></li>
+            <li class="nav-item"><a class="nav-link" href="./feedback.html">Feedback</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a class="btn btn-sm btn-gold ms-lg-2" href="./index.html#waitlist">Join Waitlist</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="section section-slate py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 text-center">
+              <p class="eyebrow">Analytics & Insights</p>
+              <h1 class="display-5 hero-title mb-3">Platform Dashboard</h1>
+              <p class="lead hero-lead">
+                Track waitlist signups, user feedback, engagement metrics, and platform performance in real-time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Metrics Cards -->
+      <section class="section section-cream py-4">
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="glass glass--light p-4 text-center">
+                <div class="metric-icon mb-2">👥</div>
+                <div class="metric-number" id="waitlistCount">247</div>
+                <div class="metric-label">Waitlist Signups</div>
+                <div class="metric-change positive">+12 this week</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="glass glass--light p-4 text-center">
+                <div class="metric-icon mb-2">⭐</div>
+                <div class="metric-number" id="avgRating">4.6</div>
+                <div class="metric-label">Avg. User Rating</div>
+                <div class="metric-change positive">+0.2 this month</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="glass glass--light p-4 text-center">
+                <div class="metric-icon mb-2">💬</div>
+                <div class="metric-number" id="feedbackCount">89</div>
+                <div class="metric-label">Feedback Submitted</div>
+                <div class="metric-change positive">+8 this week</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="glass glass--light p-4 text-center">
+                <div class="metric-icon mb-2">📊</div>
+                <div class="metric-number" id="engagementRate">73%</div>
+                <div class="metric-label">Engagement Rate</div>
+                <div class="metric-change positive">+5% this month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts Row -->
+      <section class="section section-cream">
+        <div class="container">
+          <div class="row g-4">
+            <!-- Waitlist Growth Chart -->
+            <div class="col-12 col-lg-6">
+              <div class="glass glass--light p-4">
+                <h3 class="h5 mb-4" style="font-family: 'Playfair Display', serif;">Waitlist Growth</h3>
+                <div class="chart-container" style="height: 250px;">
+                  <canvas id="waitlistChart"></canvas>
+                </div>
+                <div class="row g-2 mt-3 text-center">
+                  <div class="col-4">
+                    <div class="small text-muted">Investors</div>
+                    <div class="fw-bold">94</div>
+                  </div>
+                  <div class="col-4">
+                    <div class="small text-muted">Exporters</div>
+                    <div class="fw-bold">78</div>
+                  </div>
+                  <div class="col-4">
+                    <div class="small text-muted">Farm Owners</div>
+                    <div class="fw-bold">75</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feedback Ratings Chart -->
+            <div class="col-12 col-lg-6">
+              <div class="glass glass--light p-4">
+                <h3 class="h5 mb-4" style="font-family: 'Playfair Display', serif;">Feedback Ratings Distribution</h3>
+                <div class="chart-container" style="height: 250px;">
+                  <canvas id="ratingsChart"></canvas>
+                </div>
+                <div class="mt-3">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small">5 Stars</span>
+                    <div class="flex-grow-1 mx-3">
+                      <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 62%"></div>
+                      </div>
+                    </div>
+                    <span class="small">55</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small">4 Stars</span>
+                    <div class="flex-grow-1 mx-3">
+                      <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-success" style="width: 24%"></div>
+                      </div>
+                    </div>
+                    <span class="small">21</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small">3 Stars</span>
+                    <div class="flex-grow-1 mx-3">
+                      <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-warning" style="width: 9%"></div>
+                      </div>
+                    </div>
+                    <span class="small">8</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small">2 Stars</span>
+                    <div class="flex-grow-1 mx-3">
+                      <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-danger" style="width: 3%"></div>
+                      </div>
+                    </div>
+                    <span class="small">3</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="small">1 Star</span>
+                    <div class="flex-grow-1 mx-3">
+                      <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-danger" style="width: 2%"></div>
+                      </div>
+                    </div>
+                    <span class="small">2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Activity & Top Feedback -->
+      <section class="section section-cream">
+        <div class="container">
+          <div class="row g-4">
+            <!-- Recent Activity -->
+            <div class="col-12 col-lg-6">
+              <div class="glass glass--light p-4">
+                <h3 class="h5 mb-4" style="font-family: 'Playfair Display', serif;">Recent Activity</h3>
+                <div class="activity-list" id="activityList">
+                  <div class="activity-item d-flex gap-3 mb-3 pb-3 border-bottom">
+                    <div class="activity-icon">📝</div>
+                    <div>
+                      <div class="small fw-medium">New waitlist signup</div>
+                      <div class="small text-muted">Investor from Accra, Ghana</div>
+                      <div class="small text-muted">2 hours ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex gap-3 mb-3 pb-3 border-bottom">
+                    <div class="activity-icon">⭐</div>
+                    <div>
+                      <div class="small fw-medium">5-star feedback received</div>
+                      <div class="small text-muted">"Excellent market insights!"</div>
+                      <div class="small text-muted">5 hours ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex gap-3 mb-3 pb-3 border-bottom">
+                    <div class="activity-icon">💡</div>
+                    <div>
+                      <div class="small fw-medium">Feature suggestion</div>
+                      <div class="small text-muted">Mobile app for field data collection</div>
+                      <div class="small text-muted">1 day ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex gap-3 mb-3 pb-3 border-bottom">
+                    <div class="activity-icon">📊</div>
+                    <div>
+                      <div class="small fw-medium">Data export requested</div>
+                      <div class="small text-muted">API access for exporter in Abidjan</div>
+                      <div class="small text-muted">1 day ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item d-flex gap-3">
+                    <div class="activity-icon">🎯</div>
+                    <div>
+                      <div class="small fw-medium">EUDR alert triggered</div>
+                      <div class="small text-muted">High-risk region identified</div>
+                      <div class="small text-muted">2 days ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feedback Categories -->
+            <div class="col-12 col-lg-6">
+              <div class="glass glass--light p-4">
+                <h3 class="h5 mb-4" style="font-family: 'Playfair Display', serif;">Feedback by Category</h3>
+                <div class="category-list">
+                  <div class="category-item d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background: rgba(212,175,55,0.1);">
+                    <div class="d-flex align-items-center gap-2">
+                      <span>📈</span>
+                      <span>Market Data & Pricing</span>
+                    </div>
+                    <span class="badge bg-dark">32</span>
+                  </div>
+                  <div class="category-item d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background: rgba(212,175,55,0.1);">
+                    <div class="d-flex align-items-center gap-2">
+                      <span>✅</span>
+                      <span>EUDR Compliance</span>
+                    </div>
+                    <span class="badge bg-dark">24</span>
+                  </div>
+                  <div class="category-item d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background: rgba(212,175,55,0.1);">
+                    <div class="d-flex align-items-center gap-2">
+                      <span>🌡️</span>
+                      <span>CSSV/Disease Alerts</span>
+                    </div>
+                    <span class="badge bg-dark">18</span>
+                  </div>
+                  <div class="category-item d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background: rgba(212,175,55,0.1);">
+                    <div class="d-flex align-items-center gap-2">
+                      <span>📱</span>
+                      <span>User Experience</span>
+                    </div>
+                    <span class="badge bg-dark">15</span>
+                  </div>
+                  <div class="category-item d-flex justify-content-between align-items-center p-3 rounded" style="background: rgba(212,175,55,0.1);">
+                    <div class="d-flex align-items-center gap-2">
+                      <span>📧</span>
+                      <span>Newsletter/Briefs</span>
+                    </div>
+                    <span class="badge bg-dark">12</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Actions -->
+      <section class="section section-slate">
+        <div class="container">
+          <h2 class="section-title text-cream mb-4">Quick Actions</h2>
+          <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-3">
+              <a href="./feedback.html" class="text-decoration-none">
+                <div class="glass p-4 h-100 text-center">
+                  <div class="mb-2" style="font-size: 2rem;">💬</div>
+                  <h4 class="h6 text-cream">View All Feedback</h4>
+                  <p class="small text-cream-80 mb-0">Review and respond to user submissions</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <a href="./data.html" class="text-decoration-none">
+                <div class="glass p-4 h-100 text-center">
+                  <div class="mb-2" style="font-size: 2rem;">📊</div>
+                  <h4 class="h6 text-cream">Update Market Data</h4>
+                  <p class="small text-cream-80 mb-0">Refresh prices and compliance data</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <a href="mailto:team@cocoamarketintel.com?subject=Export Dashboard Report" class="text-decoration-none">
+                <div class="glass p-4 h-100 text-center">
+                  <div class="mb-2" style="font-size: 2rem;">📥</div>
+                  <h4 class="h6 text-cream">Export Report</h4>
+                  <p class="small text-cream-80 mb-0">Download analytics report (CSV/PDF)</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <a href="https://airtable.com" target="_blank" rel="noopener" class="text-decoration-none">
+                <div class="glass p-4 h-100 text-center">
+                  <div class="mb-2" style="font-size: 2rem;">🗄️</div>
+                  <h4 class="h6 text-cream">Open Airtable</h4>
+                  <p class="small text-cream-80 mb-0">Manage data in Airtable backend</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Source Note -->
+      <section class="section section-cream">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+              <div class="glass glass--light p-4 text-center">
+                <p class="mb-2 text-muted">
+                  <strong>Data Source:</strong> Metrics are pulled from your Airtable base in real-time.
+                </p>
+                <p class="mb-0 small text-muted">
+                  To connect your actual Airtable data, update the API integration in <code>script.js</code> with your Airtable API key and base ID.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-7">
+            <div class="footer-brand d-flex align-items-center gap-2">
+              <span class="brand-mark brand-mark--sm" aria-hidden="true"></span>
+              <div>
+                <div class="footer-title">Cocoa Market Intelligence</div>
+                <div class="footer-subtitle">AI-powered magazine for investors & exporters</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="footer-links">
+              <a href="./index.html#intelligence">Intelligence</a>
+              <a href="./index.html#heritage">Heritage</a>
+              <a href="./data.html">Data</a>
+              <a href="./feedback.html">Feedback</a>
+              <a href="./dashboard.html">Dashboard</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-rule"></div>
+        <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small text-cream-70">
+          <div>© <span id="year"></span> Cocoa Market Intelligence. All rights reserved.</div>
+          <div>Built for Ghana, Côte d'Ivoire, and global cocoa leaders.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+    <script>
+      // Dashboard-specific chart initialization
+      document.addEventListener('DOMContentLoaded', function() {
+        // Only initialize if we're on the dashboard page
+        if (!document.getElementById('waitlistChart')) return;
+
+        // Waitlist Growth Chart
+        const waitlistCtx = document.getElementById('waitlistChart').getContext('2d');
+        new Chart(waitlistCtx, {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+              label: 'Waitlist Signups',
+              data: [45, 78, 112, 156, 198, 247],
+              borderColor: '#D4AF37',
+              backgroundColor: 'rgba(212, 175, 55, 0.1)',
+              tension: 0.4,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(0,0,0,0.05)' }
+              },
+              x: {
+                grid: { display: false }
+              }
+            }
+          }
+        });
+
+        // Ratings Distribution Chart
+        const ratingsCtx = document.getElementById('ratingsChart').getContext('2d');
+        new Chart(ratingsCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
+            datasets: [{
+              data: [55, 21, 8, 3, 2],
+              backgroundColor: [
+                '#22c55e',
+                '#84cc16',
+                '#eab308',
+                '#f97316',
+                '#ef4444'
+              ],
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'right',
+                labels: {
+                  boxWidth: 12,
+                  padding: 10
+                }
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
